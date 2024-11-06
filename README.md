@@ -29,8 +29,10 @@ User=Your Server User
 
 [Install]
 WantedBy=multi-user.target
+```
 
 3. Configure the service to start on boot
+
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable CPU-exporter.service
@@ -41,7 +43,7 @@ sudo systemctl status CPU-exporter.service
 ```
 cd /etc/prometheus
 sudo vi prometheus.yaml  (copy)
-
+```yaml
   - job_name: CPU-exporter
     static_configs:
       - targets: ['192.168.1.74:8889']
