@@ -57,6 +57,8 @@ if __name__ == "__main__":
 
     # interval 1 second, send data
     while True:
+        collect_cpu_metrics()
+
         temp = get_tctl_temperature()
         if temp is not None:
             cpu_tctl_temp_gauge.set(temp)
